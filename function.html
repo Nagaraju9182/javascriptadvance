@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher-Order Function Event Handling</title>
+</head>
+<body>
+    <button id="hoverButton">Hover or Click Me</button>
+    <p id="message"></p>
+
+    <script>
+        // Higher-order function that handles different events with the same logic
+        function handleEvent(eventName) {
+            return function(event) {
+                document.getElementById('message').textContent = `Button ${eventName}`;
+            };
+        }
+
+        const hoverButton = document.getElementById('hoverButton');
+
+        // Add both hover and click events using the higher-order function
+        hoverButton.addEventListener('mouseover', handleEvent('hovered'));
+        hoverButton.addEventListener('click', handleEvent('clicked'));
+    </script>
+</body>
+</html>
