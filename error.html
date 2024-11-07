@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>java script</h1>
+    <script>
+        const jsonData = '{ "name": "John", "age": 30 '; // Missing closing brace
+
+try {
+    const parsedData = JSON.parse(jsonData); // This will throw an error
+    console.log("Parsed Data:", parsedData);
+} catch (error) {
+    console.error("Failed to parse JSON:", error.message);
+} finally {
+    console.log("Parsing attempt complete.");
+}
+
+    </script>
+</body>
+</html>
